@@ -1,0 +1,55 @@
+<!--
+  SORRISO PRIME — HEADER COMPONENT (standalone reference)
+  Use este arquivo como referência visual do header.
+  No index.html, o header está embutido diretamente no HTML.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header — Sorriso Prime</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:opsz,wght@9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1B4F72;
+      --color-secondary: #D4AF37;
+      --color-dark: #0D1B2A;
+      --color-white: #FFFFFF;
+      --color-gray: #6B7280;
+      --header-h: 72px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #1B4F72; height: 200px; font-family: 'DM Sans', sans-serif; }
+    /* Inherit all header styles from main.css */
+  </style>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header id="header" class="header scrolled">
+  <div class="container header-inner">
+    <a href="../index.html#inicio" class="logo">
+      <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="10" fill="#D4AF37"/>
+        <path d="M20 7C17 7 14.5 8.2 13 10C11.5 11.5 11 13 11 15C11 18 12.2 20.5 12.8 23C13.4 25.5 13.5 30 16 30C18.5 30 18.5 27 20 27C21.5 27 21.5 30 24 30C26.5 30 26.6 25.5 27.2 23C27.8 20.5 29 18 29 15C29 13 28.5 11.5 27 10C25.5 8.2 23 7 20 7Z" fill="white"/>
+      </svg>
+      <span class="logo-text">Sorriso <span>Prime</span></span>
+    </a>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="../index.html#inicio"      class="nav-link">Início</a></li>
+        <li><a href="../index.html#servicos"    class="nav-link">Serviços</a></li>
+        <li><a href="../index.html#sobre"       class="nav-link">Sobre</a></li>
+        <li><a href="../index.html#depoimentos" class="nav-link">Depoimentos</a></li>
+        <li><a href="../index.html#contato"     class="nav-link">Contato</a></li>
+        <li><a href="../index.html#agendamento" class="nav-link nav-cta">Agendar Consulta</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+</body>
+</html>

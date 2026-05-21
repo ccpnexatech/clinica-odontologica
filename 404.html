@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Página não encontrada | Sorriso Prime Odontologia</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231B4F72'/><path d='M16 6c-2.5 0-4.5 1-5.5 2.5C9.5 9.5 9 10.5 9 12c0 2.5 1 4.5 1.5 6.5.5 2 .5 5.5 2.5 5.5s2-3.5 3-3.5 1 3.5 3 3.5 2-3.5 2.5-5.5S23 14.5 23 12c0-1.5-.5-2.5-1.5-3.5C20.5 7 18.5 6 16 6z' fill='%23D4AF37'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1B4F72;
+      --secondary: #D4AF37;
+      --dark: #0D1B2A;
+      --gray: #6B7280;
+      --white: #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: linear-gradient(160deg, #0D1B2A 0%, #1B4F72 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -150px; right: -150px;
+      width: 400px; height: 400px;
+      background: rgba(212,175,55,0.06);
+      border-radius: 50%;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -100px; left: -100px;
+      width: 300px; height: 300px;
+      background: rgba(174,214,241,0.04);
+      border-radius: 50%;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .number-404 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(5rem, 20vw, 8rem);
+      font-weight: 700;
+      color: var(--secondary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      animation: fadeDown 0.6s ease both;
+      text-shadow: 0 8px 32px rgba(212,175,55,0.3);
+    }
+
+    .tooth-emoji {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1.5rem;
+      animation: float 3s ease-in-out infinite, fadeIn 0.6s ease 0.2s both;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50%       { transform: translateY(-12px) rotate(5deg); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+      animation: fadeUp 0.6s ease 0.3s both;
+    }
+
+    p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s ease 0.4s both;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s ease 0.5s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--dark);
+    }
+    .btn-primary:hover {
+      background: #c9a52e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212,175,55,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn svg { width: 18px; height: 18px; }
+
+    /* Quick links */
+    .quick-links {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      animation: fadeUp 0.6s ease 0.65s both;
+    }
+
+    .quick-links p {
+      font-size: 0.82rem;
+      margin-bottom: 1rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .links-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .quick-link {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.2s ease;
+    }
+
+    .quick-link:hover {
+      color: var(--secondary);
+      border-color: rgba(212,175,55,0.4);
+      background: rgba(212,175,55,0.05);
+    }
+
+    /* Logo */
+    .logo-footer {
+      margin-top: 3rem;
+      opacity: 0.3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: white;
+      animation: fadeUp 0.5s ease 0.8s both;
+    }
+
+    .logo-footer svg { width: 24px; height: 24px; }
+
+    @media (max-width: 480px) {
+      .actions { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+      .quick-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <span class="tooth-emoji" aria-hidden="true">🦷</span>
+
+  <div class="number-404" aria-hidden="true">404</div>
+
+  <h1>Ops! Esta página sumiu como tártaro na limpeza.</h1>
+
+  <p>
+    A página que você buscou não existe ou foi movida. Mas não se preocupe —
+    estamos aqui para ajudar a encontrar o que você precisa.
+  </p>
+
+  <div class="actions">
+    <a href="index.html" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      Voltar ao Início
+    </a>
+    <a href="index.html#agendamento" class="btn btn-outline">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      Agendar Consulta
+    </a>
+  </div>
+
+  <nav class="quick-links" aria-label="Links rápidos">
+    <p>Ou acesse diretamente:</p>
+    <div class="links-row">
+      <a href="index.html#servicos"    class="quick-link">Serviços</a>
+      <a href="index.html#sobre"       class="quick-link">Sobre</a>
+      <a href="index.html#depoimentos" class="quick-link">Depoimentos</a>
+      <a href="index.html#contato"     class="quick-link">Contato</a>
+    </div>
+  </nav>
+
+  <div class="logo-footer" aria-label="Sorriso Prime Odontologia">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="40" height="40" rx="10" fill="#D4AF37" opacity="0.4"/>
+      <path d="M20 7C17 7 14.5 8.2 13 10C11.5 11.5 11 13 11 15C11 18 12.2 20.5 12.8 23C13.4 25.5 13.5 30 16 30C18.5 30 18.5 27 20 27C21.5 27 21.5 30 24 30C26.5 30 26.6 25.5 27.2 23C27.8 20.5 29 18 29 15C29 13 28.5 11.5 27 10C25.5 8.2 23 7 20 7Z" fill="white" opacity="0.6"/>
+    </svg>
+    Sorriso Prime Odontologia
+  </div>
+
+</div>
+
+</body>
+</html>

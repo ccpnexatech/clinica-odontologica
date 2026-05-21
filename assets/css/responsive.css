@@ -1,0 +1,301 @@
+/* ============================================================
+   SORRISO PRIME — RESPONSIVE CSS
+   Mobile-first breakpoints
+   ============================================================ */
+
+/* ── Base mobile styles (< 640px) ── */
+
+/* Cursor — hide on touch */
+@media (hover: none) {
+  .cursor, .cursor-follower { display: none; }
+  body { cursor: auto; }
+  button, a, .service-card, .btn { cursor: pointer; }
+}
+
+/* Header mobile */
+@media (max-width: 767px) {
+  :root { --header-h: 64px; }
+
+  /* Esconde nav-links do header no mobile (usamos .mobile-menu no lugar) */
+  .nav-links { display: none !important; }
+
+  .hamburger { display: flex; }
+
+  /* Hero mobile */
+  section { padding: 60px 0; }
+
+  .hero {
+    min-height: 100svh;
+    padding: calc(var(--header-h) + 2rem) 0 3rem;
+    align-items: flex-start;
+  }
+
+  .hero-image-side { display: none; }
+
+  .hero h1 { font-size: 2rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  .hero-stats { gap: 1.5rem; }
+  .hero-divider { display: none; }
+  .stat-number { font-size: 1.6rem; }
+
+  /* Services mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-card { padding: 1.5rem; }
+
+  /* About mobile */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-image-wrap { order: -1; }
+  .about-image { height: 260px; }
+
+  .about-image-badge {
+    bottom: -16px;
+    right: 1rem;
+    padding: 12px 18px;
+  }
+
+  .about-image-badge .badge-number { font-size: 1.6rem; }
+
+  .about-differentials { grid-template-columns: 1fr; }
+
+  /* Before/After mobile */
+  .ba-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Testimonials mobile */
+  .testimonial-card { flex: 0 0 100%; }
+
+  /* Scheduling mobile */
+  .scheduling-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .scheduling-info { order: 1; }
+  .scheduling-form-card { order: 0; padding: 1.75rem 1.25rem; }
+
+  .form-grid { grid-template-columns: 1fr; }
+  .form-group.full { grid-column: 1; }
+
+  /* Contact mobile */
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .map-wrap { height: 260px; }
+
+  /* Footer mobile */
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-legal { justify-content: center; }
+
+  /* Floating elements */
+  .whatsapp-float { bottom: 1.25rem; right: 1.25rem; width: 52px; height: 52px; }
+  .back-to-top { bottom: 5.5rem; right: 1.25rem; }
+
+  /* Cookie */
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .cookie-actions { width: 100%; }
+  .cookie-actions .btn { flex: 1; justify-content: center; }
+
+  /* CTA strip */
+  .cta-strip-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Modal */
+  .modal-box {
+    max-height: 95vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  .modal-overlay { align-items: flex-end; padding: 0; }
+  .modal-header { padding: 1.25rem 1.5rem 0.75rem; }
+  .modal-body { padding: 1.25rem 1.5rem 1.75rem; }
+}
+
+/* ── sm: 640px ── */
+@media (min-width: 640px) {
+  :root { --container-pad: 2rem; }
+
+  .hero h1 { font-size: 2.5rem; }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .form-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── md: 768px ── */
+@media (min-width: 768px) {
+  :root { --container-pad: 2.5rem; }
+
+  .hamburger { display: none; }
+
+  /* Restaura nav-links normal no desktop (sem !important pois mobile usa .mobile-menu separado) */
+  .nav-links {
+    display: flex;
+    position: static;
+    background: none;
+    flex-direction: row;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: none;
+    gap: 0.25rem;
+    padding: 0;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 0;
+    align-items: center;
+  }
+
+  .hero-image-side { display: block; }
+
+  .about-grid { grid-template-columns: 1fr 1fr; }
+
+  .ba-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .contact-grid { grid-template-columns: 1fr 1.4fr; gap: 2.5rem; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  .footer-bottom { flex-direction: row; }
+}
+
+/* ── lg: 1024px ── */
+@media (min-width: 1024px) {
+  :root { --container-pad: 3rem; }
+
+  section { padding: 100px 0; }
+
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .ba-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .scheduling-grid { grid-template-columns: 1fr 1.4fr; }
+
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+
+  .testimonial-card { flex: 0 0 calc(33.333% - 1rem); }
+}
+
+/* ── xl: 1280px ── */
+@media (min-width: 1280px) {
+  :root {
+    --container-max: 1200px;
+    --container-pad: 2rem;
+  }
+
+  .hero h1 { font-size: 3.8rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+
+  .hero-stats { gap: 3rem; }
+
+  .about-grid { gap: 5rem; }
+
+  .scheduling-grid { gap: 5rem; }
+}
+
+/* ── 2xl: 1536px ── */
+@media (min-width: 1536px) {
+  :root { --container-max: 1320px; }
+}
+
+/* ── Touch device adjustments ── */
+@media (hover: none) and (pointer: coarse) {
+  .service-card:hover { transform: none; }
+  .service-card:active { transform: translateY(-2px); }
+
+  .btn:hover { transform: none; }
+  .btn:active { transform: translateY(-1px); }
+
+  .social-link:hover { transform: none; }
+
+  .nav-link::after { display: none; }
+
+  /* Larger touch targets */
+  .nav-link { padding: 12px 16px; }
+  .carousel-btn { width: 52px; height: 52px; }
+  .dot { width: 12px; height: 12px; }
+  .dot.active { width: 28px; }
+}
+
+/* ── Print styles ── */
+@media print {
+  .header, .whatsapp-float, .back-to-top, .cookie-banner,
+  .cursor, .cursor-follower, .hero-actions { display: none; }
+
+  body { font-size: 12pt; color: #000; }
+  section { padding: 20pt 0; }
+
+  a { color: #000; text-decoration: underline; }
+  a[href]::after { content: ' (' attr(href) ')'; font-size: 9pt; }
+}
+
+/* ── Landscape mobile ── */
+@media (max-height: 500px) and (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding: calc(var(--header-h) + 1.5rem) 0 2rem;
+  }
+
+  .hero h1 { font-size: 1.8rem; }
+  .hero-stats { display: none; }
+}
+
+/* ── High DPI screens ── */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .service-icon svg,
+  .diff-icon svg,
+  .contact-icon svg { image-rendering: crisp-edges; }
+}
+
+/* ── Dark mode support ── */
+@media (prefers-color-scheme: dark) {
+  /* Opted out intentionally — Luxury Medical brand has fixed palette */
+  /* Dark mode can be added as future enhancement */
+}
+
+/* ── Extra: prevent horizontal overflow globally ── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  min-width: 0; /* prevents flex/grid overflow */
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ── Fix 100vw issue with scrollbar ── */
+.hero, .about, .scheduling, .cta-strip, .footer {
+  width: 100%;
+  max-width: 100vw;
+}

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Agendamento Confirmado | Sorriso Prime Odontologia</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231B4F72'/><path d='M16 6c-2.5 0-4.5 1-5.5 2.5C9.5 9.5 9 10.5 9 12c0 2.5 1 4.5 1.5 6.5.5 2 .5 5.5 2.5 5.5s2-3.5 3-3.5 1 3.5 3 3.5 2-3.5 2.5-5.5S23 14.5 23 12c0-1.5-.5-2.5-1.5-3.5C20.5 7 18.5 6 16 6z' fill='%23D4AF37'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #1B4F72;
+      --color-secondary: #D4AF37;
+      --color-bg: #FAFAFA;
+      --color-dark: #0D1B2A;
+      --color-white: #FFFFFF;
+      --color-gray: #6B7280;
+      --color-success: #10B981;
+      --shadow-soft: 0 4px 24px rgba(27,79,114,0.08);
+      --shadow-strong: 0 8px 48px rgba(27,79,114,0.16);
+      --radius: 12px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(160deg, var(--color-dark) 0%, #1B4F72 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: var(--color-dark);
+      overflow: hidden;
+    }
+
+    /* Background decoration */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: rgba(212,175,55,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: rgba(174,214,241,0.04);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: var(--shadow-strong);
+      text-align: center;
+      animation: cardIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .success-circle {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #10B981, #059669);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 32px rgba(16,185,129,0.35);
+      animation: bounceIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+    }
+
+    @keyframes bounceIn {
+      from { opacity: 0; transform: scale(0.3); }
+      60%  { transform: scale(1.1); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .success-check {
+      width: 36px;
+      height: 36px;
+      color: white;
+    }
+
+    .checkmark-path {
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: drawCheck 0.5s ease 0.6s forwards;
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      color: var(--color-dark);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+      animation: fadeUp 0.6s ease 0.4s both;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--color-gray);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease 0.5s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Resumo do agendamento */
+    .summary-box {
+      background: #F0F8FF;
+      border: 1px solid rgba(27,79,114,0.12);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      text-align: left;
+      animation: fadeUp 0.6s ease 0.55s both;
+    }
+
+    .summary-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.87rem;
+      color: var(--color-gray);
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(27,79,114,0.06);
+      gap: 1rem;
+    }
+
+    .summary-item:last-child { border-bottom: none; }
+
+    .summary-label { font-weight: 500; flex-shrink: 0; }
+    .summary-value { color: var(--color-dark); font-weight: 600; text-align: right; }
+
+    .empty-summary {
+      font-size: 0.88rem;
+      color: var(--color-gray);
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* Social CTAs */
+    .social-section {
+      border-top: 1px solid rgba(27,79,114,0.08);
+      padding-top: 1.5rem;
+      margin-top: 0.5rem;
+      animation: fadeUp 0.6s ease 0.7s both;
+    }
+
+    .social-label {
+      font-size: 0.82rem;
+      color: var(--color-gray);
+      margin-bottom: 1rem;
+    }
+
+    .social-btns {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.83rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1.5px solid rgba(27,79,114,0.15);
+      color: var(--color-gray);
+    }
+
+    .social-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+    .social-btn.instagram:hover { border-color: #E1306C; color: #E1306C; }
+    .social-btn.facebook:hover  { border-color: #1877F2; color: #1877F2; }
+    .social-btn.youtube:hover   { border-color: #FF0000; color: #FF0000; }
+
+    .social-btn svg { width: 16px; height: 16px; }
+
+    /* Buttons */
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease 0.65s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--color-primary); color: white; }
+    .btn-primary:hover { background: #154060; transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+
+    .btn-gold { background: var(--color-secondary); color: var(--color-dark); }
+    .btn-gold:hover { background: #c9a52e; transform: translateY(-2px); }
+
+    .btn svg { width: 18px; height: 18px; }
+
+    /* Logo */
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 2rem;
+      opacity: 0.5;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--color-gray);
+      animation: fadeUp 0.5s ease 0.8s both;
+    }
+
+    .logo-wrap svg { width: 28px; height: 28px; }
+
+    /* Confetti dots */
+    .confetti {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: confettiFall var(--dur) ease var(--delay) both;
+    }
+
+    @keyframes confettiFall {
+      from { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+      to   { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.5rem; }
+      h1 { font-size: 1.5rem; }
+      .social-btns { flex-direction: column; align-items: stretch; }
+      .social-btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Confetti -->
+<div class="confetti" aria-hidden="true" id="confetti"></div>
+
+<div class="card" role="main">
+
+  <!-- Success icon -->
+  <div class="success-circle" aria-hidden="true">
+    <svg class="success-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path class="checkmark-path" d="M5 13l4 4L19 7"/>
+    </svg>
+  </div>
+
+  <h1>Solicitação enviada<br>com <em style="color: var(--color-secondary)">sucesso!</em></h1>
+
+  <p class="subtitle">
+    Seu agendamento foi encaminhado via WhatsApp. Nossa equipe confirmará
+    sua consulta em até <strong>2 horas úteis</strong>. Ficamos animados em
+    atendê-lo na Sorriso Prime! 🦷
+  </p>
+
+  <!-- Resumo dinâmico -->
+  <div class="summary-box" id="summary-box">
+    <p class="summary-title">Resumo do Agendamento</p>
+    <div id="summary-content">
+      <p class="empty-summary">Carregando detalhes...</p>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <a href="index.html" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      Voltar ao Site
+    </a>
+    <a
+      href="https://wa.me/5585999990001"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-gold"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M11.999 2.001C6.486 2.001 2 6.487 2 12c0 1.936.535 3.741 1.464 5.29L2 22l4.786-1.455A9.94 9.94 0 0012 22c5.514 0 10-4.486 10-9.999S17.513 2.001 11.999 2.001z"/>
+      </svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+
+  <!-- Social follow -->
+  <div class="social-section">
+    <p class="social-label">Nos acompanhe nas redes sociais para dicas de saúde bucal 😁</p>
+    <div class="social-btns">
+      <a href="#" class="social-btn instagram" aria-label="Instagram da Sorriso Prime">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="#" class="social-btn facebook" aria-label="Facebook da Sorriso Prime">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+        </svg>
+        Facebook
+      </a>
+      <a href="#" class="social-btn youtube" aria-label="YouTube da Sorriso Prime">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+          <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+        </svg>
+        YouTube
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer logo -->
+  <div class="logo-wrap" aria-hidden="true">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="10" fill="#D4AF37" opacity="0.4"/>
+      <path d="M20 7C17 7 14.5 8.2 13 10C11.5 11.5 11 13 11 15C11 18 12.2 20.5 12.8 23C13.4 25.5 13.5 30 16 30C18.5 30 18.5 27 20 27C21.5 27 21.5 30 24 30C26.5 30 26.6 25.5 27.2 23C27.8 20.5 29 18 29 15C29 13 28.5 11.5 27 10C25.5 8.2 23 7 20 7Z" fill="#1B4F72" opacity="0.4"/>
+    </svg>
+    Sorriso Prime Odontologia
+  </div>
+
+</div>
+
+<script>
+  // Render summary from sessionStorage
+  const renderSummary = () => {
+    const raw = sessionStorage.getItem('sp_agendamento');
+    const el  = document.getElementById('summary-content');
+    if (!raw || !el) return;
+
+    try {
+      const d = JSON.parse(raw);
+      const labels = {
+        clareamento: 'Clareamento Dental',
+        ortodontia:  'Ortodontia Invisível',
+        implante:    'Implante Dental',
+        lente:       'Lente de Contato Dental',
+        canal:       'Tratamento de Canal',
+        limpeza:     'Limpeza e Prevenção',
+      };
+      const fmtDate = d.data
+        ? new Date(d.data + 'T00:00:00').toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' })
+        : '—';
+
+      el.innerHTML = `
+        <div class="summary-item">
+          <span class="summary-label">Nome</span>
+          <span class="summary-value">${d.nome || '—'}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Serviço</span>
+          <span class="summary-value">${labels[d.servico] || d.servico || '—'}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Data</span>
+          <span class="summary-value">${fmtDate}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Horário</span>
+          <span class="summary-value">${d.horario || '—'}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Telefone</span>
+          <span class="summary-value">${d.telefone || '—'}</span>
+        </div>
+      `;
+    } catch {
+      el.innerHTML = '<p class="empty-summary">Detalhes do agendamento não disponíveis.</p>';
+    }
+  };
+
+  // Confetti
+  const makeConfetti = () => {
+    const container = document.getElementById('confetti');
+    const colors = ['#D4AF37', '#1B4F72', '#10B981', '#AED6F1', '#fff'];
+    for (let i = 0; i < 45; i++) {
+      const piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      piece.style.cssText = `
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * -20}%;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        width: ${4 + Math.random() * 8}px;
+        height: ${4 + Math.random() * 8}px;
+        border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+        --dur: ${2 + Math.random() * 3}s;
+        --delay: ${Math.random() * 1.5}s;
+      `;
+      container.appendChild(piece);
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSummary();
+    makeConfetti();
+  });
+</script>
+
+</body>
+</html>
